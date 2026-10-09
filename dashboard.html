@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>لوحة المسؤول | تقييم الخدمات</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="topbar"><div class="brand"><div class="court-mark">⚖</div><div><b>لوحة القيادة</b><span>المحكمة الابتدائية بإنزكان</span></div></div><a href="index.html" class="admin-link">واجهة المرتفق</a></header>
+<main class="container">
+<section class="hero compact"><span class="badge">Dashboard</span><h1>مؤشرات جودة الخدمات</h1><p>لوحة قيادة مركزية لمتابعة رضا المرتفقين حسب الشعبة والفترة.</p></section>
+<section class="login card" id="loginBox"><h2>دخول المسؤول</h2><input id="email" type="email" placeholder="البريد الإلكتروني"><input id="password" type="password" placeholder="كلمة المرور"><button class="submit" onclick="login()">دخول</button><p id="loginMsg"></p></section>
+<section id="dashboard" class="hidden">
+<div class="filters card"><label>من <input id="from" type="date"></label><label>إلى <input id="to" type="date"></label><button onclick="loadData()">تحديث</button><button onclick="signout()">خروج</button></div>
+<section class="kpis"><div class="kpi"><span>إجمالي التقييمات</span><b id="total">0</b></div><div class="kpi"><span>متوسط الرضا</span><b id="avg">0/5</b></div><div class="kpi"><span>نسبة الرضا</span><b id="satisfied">0%</b></div><div class="kpi"><span>تمت المعالجة</span><b id="resolved">0%</b></div></section>
+<section class="card"><h2>الأداء حسب الشعبة</h2><div class="tablewrap"><table><thead><tr><th>الشعبة</th><th>التقييمات</th><th>المتوسط</th><th>الرضا</th><th>المعالجة</th></tr></thead><tbody id="table"></tbody></table></div></section>
+<section class="card"><h2>آخر الملاحظات</h2><div id="comments"></div></section>
+<button class="submit" onclick="exportCSV()">تصدير النتائج CSV</button>
+</section></main>
+<script src="config.js"></script><script src="dashboard.js"></script>
+</body></html>
